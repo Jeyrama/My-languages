@@ -10,3 +10,9 @@ Examples:
 {"Hindi": 60, "Dutch" : 93, "Greek": 71}  -->  ["Dutch", "Greek", "Hindi"]
 {"C++": 50, "ASM": 10, "Haskell": 20}     -->  []
 */
+
+
+const myLanguages = results => Object.entries(results)
+  .filter(([name, points]) => points >= 60)
+  .sort(([name1, points1], [name2, points2]) => points2 - points1)
+  .map(([name, points]) => name);
